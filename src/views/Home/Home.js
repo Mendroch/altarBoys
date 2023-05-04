@@ -7,6 +7,7 @@ import { ReactComponent as LoadIcon } from 'assets/icons/load.svg';
 import { ContentContext } from 'providers/ContentProvider';
 import { getAnimationProps } from 'helpers/getAnimationProps';
 import ParishButton from 'components/molecules/ParishButton/ParishButton';
+import ParishName from 'components/molecules/ParishName/ParishName';
 
 const Home = () => {
   const { content, transmisionUrl, whetherOpenLoading, setType } = useContext(ContentContext);
@@ -20,6 +21,7 @@ const Home = () => {
 
   return (
     <Wrapper initial={initial} animate={animate} transition={trasition} exit={exit}>
+      <ParishName />
       <ParishButton />
       <HeaderContainer>
         <StyledImage />
