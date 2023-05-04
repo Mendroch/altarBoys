@@ -6,6 +6,7 @@ import Modal from 'components/organisms/Modal/Modal';
 import { ReactComponent as LoadIcon } from 'assets/icons/load.svg';
 import { ContentContext } from 'providers/ContentProvider';
 import { getAnimationProps } from 'helpers/getAnimationProps';
+import ParishButton from 'components/molecules/ParishButton/ParishButton';
 
 const Home = () => {
   const { content, transmisionUrl, whetherOpenLoading, setType } = useContext(ContentContext);
@@ -19,6 +20,7 @@ const Home = () => {
 
   return (
     <Wrapper initial={initial} animate={animate} transition={trasition} exit={exit}>
+      <ParishButton />
       <HeaderContainer>
         <StyledImage />
         <h1>MINISTRANCI</h1>

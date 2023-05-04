@@ -5,6 +5,7 @@ import { theme } from 'assets/styles/theme';
 import { HashRouter as Router } from 'react-router-dom';
 import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
 import ContentProvider from 'providers/ContentProvider';
+import ParishProvider from 'providers/ParishProvider';
 import AnimatedRoutes from './AnimatedRoutes';
 import { useDisablePinchZoom } from 'hooks/useDisablePinchZoom';
 
@@ -17,7 +18,9 @@ const Root = () => {
         <GlobalStyle />
         <MainTemplate>
           <ContentProvider>
-            <AnimatedRoutes />
+            <ParishProvider>
+              <AnimatedRoutes />
+            </ParishProvider>
           </ContentProvider>
         </MainTemplate>
       </ThemeProvider>
