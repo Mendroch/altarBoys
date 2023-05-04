@@ -3,6 +3,7 @@ export const theme = {
     white: '#FFFFFF',
     black: '#090909',
     gray: '#5F5F5F',
+    red: '#FA6775',
     lightGray: '#DFDFDF',
     tangerineYellow: '#ffC808',
     blueLagoon: '#076685',
@@ -13,6 +14,6 @@ export const theme = {
     xl: '24px',
     l: '20px',
     m: '16px',
-    t: '15px',
+    text: '15px',
   },
 };

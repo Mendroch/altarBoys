@@ -2,13 +2,26 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
+import { HashRouter as Router } from 'react-router-dom';
+import MainTemplate from 'components/templates/MainTemplate/MainTemplate';
+import ContentProvider from 'providers/ContentProvider';
+import AnimatedRoutes from './AnimatedRoutes';
+import { useDisablePinchZoom } from 'hooks/useDisablePinchZoom';
 
 const Root = () => {
+  useDisablePinchZoom();
+
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyle />
-      <h1>Jakiś tekst</h1>
-    </ThemeProvider>
+    <Router>
+      <ThemeProvider theme={theme}>
+        <GlobalStyle />
+        <MainTemplate>
+          <ContentProvider>
+            <AnimatedRoutes />
+          </ContentProvider>
+        </MainTemplate>
+      </ThemeProvider>
+    </Router>
   );
 };
 
