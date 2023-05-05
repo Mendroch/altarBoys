@@ -1,6 +1,9 @@
 {
   "name": "altarboys",
-  "version": "1.1.1",
+  "displayName": "Ministranci",
+  "version": "1.0.0",
+  "description": "Aplikacja dedykowana ministrantom ze Skoczowa",
+  "main": "index.js",
   "private": true,
   "dependencies": {
     "axios": "^1.4.0",
@@ -21,6 +24,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "keywords": [
+    "ecosystem:cordova"
+  ],
   "lint-staged": {
     "src/**/*.{js,json}": [
       "prettier --write"
@@ -44,10 +50,27 @@
     ]
   },
   "devDependencies": {
+    "cordova-android": "^11.0.0",
+    "cordova-ios": "^6.3.0",
+    "cordova-plugin-screen-orientation": "^3.0.3",
+    "cordova-plugin-statusbar": "^3.0.0",
+    "es6-promise-plugin": "^4.2.2",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.2",
     "lint-staged": "^13.1.0",
+    "onesignal-cordova-plugin": "^3.3.1",
     "prettier": "^2.8.1"
+  },
+  "cordova": {
+    "plugins": {
+      "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-statusbar": {},
+      "onesignal-cordova-plugin": {}
+    },
+    "platforms": [
+      "ios",
+      "android"
+    ]
   }
 }

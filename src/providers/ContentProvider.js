@@ -15,7 +15,6 @@ export const ContentContext = React.createContext({
 
 const queries = {
   announcements: 'https://ministranci.parafiaskoczow.ox.pl/api/announcements',
-  announcementsUpdate: 'https://ministranci.parafiaskoczow.ox.pl/api/announcements/last-update',
   assistPiotrIPawel: 'https://ministranci.parafiaskoczow.ox.pl/api/assistspiotrpawels',
   assistWislica: 'https://ministranci.parafiaskoczow.ox.pl/api/assistswislicas',
   assistSzpitalik: 'https://ministranci.parafiaskoczow.ox.pl/api/assistsszpitaliks',
