@@ -1,19 +1,24 @@
 import React, { useState, useEffect, useContext } from 'react';
+import { useLocation } from 'react-router-dom';
 import { ContentContext } from './ContentProvider';
 import { getFromLS, setToLS } from 'utils/storage';
 import { replaceLetters } from 'utils/replaceLetters';
 
 export const ParishContext = React.createContext({
-  parish: {},
+  parish: '',
   parishContent: {},
   setParish: () => {},
+  getContent: () => {},
+  setTextId: () => {},
 });
 
 const ParishProvider = ({ children }) => {
   const parishLS = getFromLS('parish');
   const [parish, setParish] = useState(parishLS.length ? parishLS : 'PiotrIPawel');
   const [parishContent, setParishContent] = useState({});
-  const { content, whetherOpenLoading } = useContext(ContentContext);
+  const [textId, setTextId] = useState('');
+  const { content, contentType, whetherOpenLoading } = useContext(ContentContext);
+  let location = useLocation();
 
   const setContent = () => {
     setParishContent({
@@ -32,12 +37,22 @@ const ParishProvider = ({ children }) => {
     // eslint-disable-next-line
   }, [parish, content]);
 
+  const getContent = () => {
+    return contentType === 'announcements'
+      ? parishContent.announcements.description
+      : location.pathname === '/titles'
+      ? parishContent.assists
+      : parishContent.assists.find((elem) => elem.id === textId);
+  };
+
   return (
     <ParishContext.Provider
       value={{
         parish,
         parishContent,
         setParish,
+        getContent,
+        setTextId,
       }}
     >
       {children}

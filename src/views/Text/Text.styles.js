@@ -28,8 +28,3 @@ export const Wrapper = styled(ContentWrapper)`
     font-size: ${({ fontSize }) => fontSize};
   }
 `;
-
-export const TextTitle = styled.p`
-  margin-bottom: 11px;
-  font-family: 'FiraSansBold';
-`;

@@ -7,9 +7,10 @@ export const ContentContext = React.createContext({
   content: {},
   fontSize: '',
   transmisionUrl: '',
+  contentType: '',
   whetherOpenLoading: () => {},
-  setTextId: () => {},
   updateFontSize: () => {},
+  setContentType: () => {},
 });
 
 const queries = {
@@ -28,14 +29,20 @@ const reducer = (state, action) => {
 };
 
 const sortData = (data) => {
-  return data[0] ? data.sort((a, b) => a.name.localeCompare(b.name)) : data;
+  return data.length > 1 && data[0].date
+    ? data.sort((a, b) => {
+        let date1 = new Date(a.date);
+        let date2 = new Date(b.date);
+        return date2 > date1 ? -1 : date1 > date2 ? 1 : 0;
+      })
+    : data;
 };
 
 const ContentProvider = ({ children }) => {
   const [content, dispatch] = useReducer(reducer, getFromLS('content'));
-  const [textId, setTextId] = useState('');
   const [fontSize, setFontSize] = useState(getFromLS('textSize'));
   const [transmisionUrl, setTransmisionUrl] = useState();
+  const [contentType, setContentType] = useState();
   const [error, setError] = useState('');
 
   useEffect(() => {
@@ -49,11 +56,6 @@ const ContentProvider = ({ children }) => {
       .catch((error) => setError(error));
   }, []);
 
-  const updateFontSize = (size) => {
-    setFontSize(size);
-    setToLS('textSize', size);
-  };
-
   useEffect(() => {
     for (const query in queries) {
       axios
@@ -61,8 +63,7 @@ const ContentProvider = ({ children }) => {
         .then(({ data }) => {
           dispatch({
             field: query,
-            value: data,
-            // value: sortData(data),
+            value: sortData(data),
           });
         })
         .catch(() => {
@@ -79,15 +80,21 @@ const ContentProvider = ({ children }) => {
     return Object.keys(content).length < Object.keys(queries).length;
   };
 
+  const updateFontSize = (size) => {
+    setFontSize(size);
+    setToLS('textSize', size);
+  };
+
   return (
     <ContentContext.Provider
       value={{
         content,
         fontSize,
         transmisionUrl,
+        contentType,
         whetherOpenLoading,
-        setTextId,
         updateFontSize,
+        setContentType,
       }}
     >
       {children}

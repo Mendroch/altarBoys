@@ -1,10 +1,11 @@
 import React from 'react';
 import { Wrapper } from './ListItem.styles';
+import { fixDate } from 'utils/fixDate';
 
-const ListItem = ({ elem, address, setId }) => {
+const ListItem = ({ elem, setId }) => {
   return (
-    <Wrapper to={address} onClick={() => setId(elem.id)}>
-      {elem.name}
+    <Wrapper to={'/text'} onClick={() => setId(elem.id)}>
+      {`${elem.title} - ${fixDate(elem.date)}`}
     </Wrapper>
   );
 };

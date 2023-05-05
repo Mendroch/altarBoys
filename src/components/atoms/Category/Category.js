@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Category = styled.div`
-  padding-left: 17px;
+  padding: 0 17px;
   display: flex;
   align-items: center;
   min-height: 37px;

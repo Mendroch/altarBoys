@@ -3,22 +3,21 @@ import { ViewWrapper } from 'components/atoms/ViewWrapper/ViewWrapper';
 import Navigation from 'components/organisms/Navigation/Navigation';
 import { Category } from 'components/atoms/Category/Category';
 import { ContentContext } from 'providers/ContentProvider';
-import { Wrapper, TextTitle } from './Text.styles';
+import { ParishContext } from 'providers/ParishProvider';
+import { Wrapper } from './Text.styles';
 import { usePinching } from 'hooks/usePinching';
 import { getAnimationProps } from 'helpers/getAnimationProps';
+import { fixDate } from 'utils/fixDate';
 
 const createContent = (content) => {
   return { __html: content };
 };
 
-const checkLocation = (type) => {
-  return type === 'Ogłoszenia' || type === 'Intencje mszy';
-};
-
 const Text = () => {
-  const { getCategory, getType, getContent, fontSize } = useContext(ContentContext);
+  const { contentType, fontSize } = useContext(ContentContext);
+  const { getContent } = useContext(ParishContext);
   const [content] = useState(getContent());
-  const [isDefectiveView] = useState(checkLocation(getType()));
+  const [isDefectiveView] = useState(contentType === 'announcements');
   const { pinchingStart, pinchingMove, pinchingEnd } = usePinching();
   const { initial, animate, trasition, exit } = getAnimationProps();
 
@@ -32,13 +31,12 @@ const Text = () => {
       onTouchMove={(e) => pinchingMove(e)}
       onTouchEnd={(e) => pinchingEnd(e)}
     >
-      <Navigation type={getType()} />
-      {!isDefectiveView ? <Category>{getCategory(content.category_id)}</Category> : null}
+      <Navigation type={contentType === 'announcements' ? 'Ogłoszenia' : 'Asysty'} />
+      {!isDefectiveView ? (
+        <Category>{`${content.title} - ${fixDate(content.date)}`}</Category>
+      ) : null}
       <Wrapper isDefectiveView={isDefectiveView} fontSize={fontSize}>
-        {isDefectiveView ? null : content.name !== getCategory(content.category_id) ? (
-          <TextTitle>{content.name}</TextTitle>
-        ) : null}
-        <p dangerouslySetInnerHTML={createContent(content.content)} />
+        <p dangerouslySetInnerHTML={createContent(isDefectiveView ? content : content.content)} />
       </Wrapper>
     </ViewWrapper>
   );
