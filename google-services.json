@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "613627049919",
+    "project_id": "altarboys-4fbee",
+    "storage_bucket": "altarboys-4fbee.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613627049919:android:5e54a019c5085c92bf530a",
+        "android_client_info": {
+          "package_name": "pl.optimalit.ministranci"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613627049919-7gp2mkpsv9u4a2buv7co2nd45tdgk0mi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHH0usHo_9HvjgeR40HYOZQ6t4bY1_FYU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613627049919-7gp2mkpsv9u4a2buv7co2nd45tdgk0mi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "613627049919-014libgbvbgdreiq0q8g1d11p72dgh42.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "pl.optimalit.ministranci"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
