@@ -12,7 +12,6 @@ const startApp = () => {
       <Root />
     </React.StrictMode>
   );
-  if (window.cordova) window.plugins.OneSignal.setAppId('93442cb8-9091-495b-b46b-67201613a978');
   serviceWorker.register();
 };
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Wrapper, Group, BackButton } from './Navigation.styles';
-import { ReactComponent as BackIcon } from 'assets/icons/arrowLeft.svg';
+import { Wrapper, Group, BackButton, Icon } from './Navigation.styles';
+import icon from 'assets/icons/arrowLeft.svg';
 
 const Navigation = ({ type }) => {
   const navigate = useNavigate();
@@ -10,7 +10,7 @@ const Navigation = ({ type }) => {
     <Wrapper>
       <Group>
         <BackButton onClick={() => navigate(-1)}>
-          <BackIcon />
+          <Icon src={icon} alt={'arrow icon'} />
         </BackButton>
         <p>{type}</p>
       </Group>

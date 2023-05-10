@@ -3,6 +3,8 @@
   "displayName": "Ministranci",
   "version": "1.0.0",
   "description": "Aplikacja dedykowana ministrantom ze Skoczowa",
+  "author": "Krzysztof Mendroch, OptimalIT",
+  "homepage": "./",
   "main": "index.js",
   "private": true,
   "dependencies": {
@@ -64,13 +66,24 @@
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-screen-orientation": {},
       "cordova-plugin-statusbar": {},
-      "cordova-plugin-firebasex": {}
+      "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-firebasex": {
+        "ANDROID_ICON_ACCENT": "#1B7290",
+        "ANDROID_FIREBASE_PERFORMANCE_MONITORING": "false",
+        "IOS_STRIP_DEBUG": "true",
+        "FIREBASE_ANALYTICS_COLLECTION_ENABLED": "false",
+        "FIREBASE_PERFORMANCE_COLLECTION_ENABLED": "false",
+        "FIREBASE_CRASHLYTICS_COLLECTION_ENABLED": "false",
+        "FIREBASE_FCM_AUTOINIT_ENABLED": "false",
+        "SETUP_RECAPTCHA_VERIFICATION": "true",
+        "IOS_ENABLE_APPLE_SIGNIN": "true",
+        "IOS_USE_PRECOMPILED_FIRESTORE_POD": "false"
+      }
     },
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
