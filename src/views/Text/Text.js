@@ -8,6 +8,7 @@ import { Wrapper } from './Text.styles';
 import { usePinching } from 'hooks/usePinching';
 import { getAnimationProps } from 'helpers/getAnimationProps';
 import { fixDate } from 'utils/fixDate';
+import { Info } from 'components/atoms/Info/Info';
 
 const createContent = (content) => {
   return { __html: content };
@@ -36,7 +37,11 @@ const Text = () => {
         <Category>{`${content.title} - ${fixDate(content.date)}`}</Category>
       ) : null}
       <Wrapper isDefectiveView={isDefectiveView} fontSize={fontSize}>
-        <p dangerouslySetInnerHTML={createContent(isDefectiveView ? content : content.content)} />
+        {!content && contentType === 'announcements' ? (
+          <Info>Brak ogłoszeń</Info>
+        ) : (
+          <p dangerouslySetInnerHTML={createContent(isDefectiveView ? content : content.content)} />
+        )}
       </Wrapper>
     </ViewWrapper>
   );
