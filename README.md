@@ -27,3 +27,9 @@ Build project `npm run build`
 Rename folder build -> www
 
 Build Cordova project `cordova build android --release` or `cordova build ios --release`
+
+## Fix statusbar color on Android 13+
+
+Go to `\platforms\android\CordovaLib\src\org\apache\cordova\SplashScreenPlugin.java`
+
+comment out the entire function `splashScreen.setOnExitAnimationListener`

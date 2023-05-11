@@ -1,21 +1,21 @@
 {
   "files": {
     "main.css": "./static/css/main.7deb5db9.css",
-    "main.js": "./static/js/main.78c18e74.js",
+    "main.js": "./static/js/main.3c1870aa.js",
     "static/media/FiraSans-Bold.ttf": "./static/media/FiraSans-Bold.b2c1d356b236acbad8ef.ttf",
     "static/media/FiraSans-Medium.ttf": "./static/media/FiraSans-Medium.d11d9e14e00fc1a96751.ttf",
     "static/media/FiraSans-Regular.ttf": "./static/media/FiraSans-Regular.f4eb295ecc2fb842d61c.ttf",
     "static/media/FiraSans-Light.ttf": "./static/media/FiraSans-Light.5289d87fc5e97d9cd428.ttf",
-    "static/media/icon.svg": "./static/media/icon.dd8d68229fe36987ce8b2071390ceb20.svg",
+    "static/media/icon.svg": "./static/media/icon.e03bdc65d23c4f4fa533ff6ccfeb5455.svg",
     "index.html": "./index.html",
-    "static/media/church.svg": "./static/media/church.c48f4d0f2dcdb710703a2e66bbe47280.svg",
-    "static/media/load.svg": "./static/media/load.bad613d253babaf143f3bd829db6d847.svg",
-    "static/media/arrowLeft.svg": "./static/media/arrowLeft.3ba33c1491d1750f311893ee934a21cb.svg",
+    "static/media/church.svg": "./static/media/church.ddad79df7b05472def52ff6ae3cb2e9e.svg",
+    "static/media/load.svg": "./static/media/load.0acb5782f68aa2a06647508eb1baec59.svg",
+    "static/media/arrowLeft.svg": "./static/media/arrowLeft.c6bd01fcebfb151bb1cf9fd85c14ccd6.svg",
     "main.7deb5db9.css.map": "./static/css/main.7deb5db9.css.map",
-    "main.78c18e74.js.map": "./static/js/main.78c18e74.js.map"
+    "main.3c1870aa.js.map": "./static/js/main.3c1870aa.js.map"
   },
   "entrypoints": [
     "static/css/main.7deb5db9.css",
-    "static/js/main.78c18e74.js"
+    "static/js/main.3c1870aa.js"
   ]
 }

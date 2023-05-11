@@ -52,7 +52,7 @@
     ]
   },
   "devDependencies": {
-    "cordova-android": "^10.1.2",
+    "cordova-android": "^11.0.0",
     "cordova-ios": "^6.3.0",
     "cordova-plugin-firebasex": "^16.0.0",
     "cordova-plugin-screen-orientation": "^3.0.3",
@@ -66,8 +66,8 @@
   },
   "cordova": {
     "plugins": {
-      "cordova-plugin-statusbar": {},
       "cordova-plugin-screen-orientation": {},
+      "cordova-plugin-statusbar": {},
       "cordova-plugin-firebasex": {
         "ANDROID_ICON_ACCENT": "#1B7290",
         "ANDROID_FIREBASE_PERFORMANCE_MONITORING": "false",
@@ -82,8 +82,8 @@
       }
     },
     "platforms": [
-      "android",
-      "ios"
+      "ios",
+      "android"
     ]
   }
 }
