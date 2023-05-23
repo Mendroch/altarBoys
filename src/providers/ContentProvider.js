@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useReducer } from 'react';
-import axios from 'axios';
 import { getFromLS, setToLS } from 'utils/storage';
 import { getLatestVideoUrl } from 'helpers/getTransmissionUrl';
+import { getData } from 'helpers/getData';
 
 export const ContentContext = React.createContext({
   content: {},
@@ -27,16 +27,6 @@ const reducer = (state, action) => {
   };
 };
 
-const sortData = (data) => {
-  return data.length > 1 && data[0].date
-    ? data.sort((a, b) => {
-        let date1 = new Date(a.date);
-        let date2 = new Date(b.date);
-        return date2 > date1 ? -1 : date1 > date2 ? 1 : 0;
-      })
-    : data;
-};
-
 const ContentProvider = ({ children }) => {
   const [content, dispatch] = useReducer(reducer, getFromLS('content'));
   const [fontSize, setFontSize] = useState(getFromLS('textSize'));
@@ -45,6 +35,7 @@ const ContentProvider = ({ children }) => {
   const [error, setError] = useState('');
 
   useEffect(() => {
+    getData(queries, dispatch, setError);
     let urlFromLS = getFromLS('transmissionUrl');
     if (urlFromLS.length) setTransmisionUrl(urlFromLS);
     getLatestVideoUrl()
@@ -53,22 +44,6 @@ const ContentProvider = ({ children }) => {
         setToLS('transmissionUrl', url);
       })
       .catch((error) => setError(error));
-  }, []);
-
-  useEffect(() => {
-    for (const query in queries) {
-      axios
-        .get(queries[query])
-        .then(({ data }) => {
-          dispatch({
-            field: query,
-            value: sortData(data),
-          });
-        })
-        .catch(() => {
-          setError(`Błąd połączenia z internetem`);
-        });
-    }
   }, []);
 
   useEffect(() => {

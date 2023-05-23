@@ -11,7 +11,7 @@ export const useDisablePinchZoom = () => {
     document.addEventListener('scroll', disablePinchZoom, { passive: false });
     return () => {
       document.removeEventListener('touchmove', disablePinchZoom);
-      document.addEventListener('scroll', disablePinchZoom);
+      document.removeEventListener('scroll', disablePinchZoom);
     };
   }, []);
 };

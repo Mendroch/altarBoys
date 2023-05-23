@@ -42,7 +42,7 @@ const ParishProvider = ({ children }) => {
       ? parishContent.announcements.description
       : location.pathname === '/titles'
       ? parishContent.assists
-      : parishContent.assists.find((elem) => elem.id === textId);
+      : parishContent.assists.find((elem) => elem?.id === textId);
   };
 
   return (
