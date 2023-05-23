@@ -8,6 +8,7 @@ import ContentProvider from 'providers/ContentProvider';
 import ParishProvider from 'providers/ParishProvider';
 import AnimatedRoutes from './AnimatedRoutes';
 import { useDisablePinchZoom } from 'hooks/useDisablePinchZoom';
+import InitialProvider from 'providers/InitialProvider';
 
 const Root = () => {
   useDisablePinchZoom();
@@ -19,7 +20,9 @@ const Root = () => {
         <MainTemplate>
           <ContentProvider>
             <ParishProvider>
-              <AnimatedRoutes />
+              <InitialProvider>
+                <AnimatedRoutes />
+              </InitialProvider>
             </ParishProvider>
           </ContentProvider>
         </MainTemplate>
