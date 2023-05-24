@@ -6,6 +6,6 @@ export const Info = styled.p`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: ${({ theme }) => theme.fontSize.xl};
+  font-size: ${({ theme }) => theme.fontSize.xl} !important;
   text-align: center;
 `;
