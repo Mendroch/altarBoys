@@ -1,0 +1,12 @@
+{
+  "android": {
+    "release": {
+      "keystore": "ministranci.keystore",
+      "storePassword": "#5AXcD0#9xl$as",
+      "alias": "ministranci",
+      "password": "#5AXcD0#9xl$as",
+      "keystoreType": "jks",
+      "packageType": "bundle"
+    }
+  }
+}

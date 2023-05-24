@@ -18,6 +18,8 @@ Go into the repository `cd altarBoys`
 
 Install dependencies `npm install`
 
+Add platform `cordova platform add android` or `cordova platform add ios`
+
 Run the app `npm start`
 
 ## Build new version
@@ -32,4 +34,4 @@ Build Cordova project `cordova build android --release` or `cordova build ios --
 
 Go to `\platforms\android\CordovaLib\src\org\apache\cordova\SplashScreenPlugin.java`
 
-comment out the entire function `splashScreen.setOnExitAnimationListener`
+Comment out the entire function `splashScreen.setOnExitAnimationListener`

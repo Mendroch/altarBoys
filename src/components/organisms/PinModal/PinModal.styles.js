@@ -16,6 +16,7 @@ export const Text = styled.p`
 
 export const Input = styled.input`
   padding: 10px;
+  max-width: 100%;
   border-radius: 10px;
   border: 1px solid ${({ theme }) => theme.colors.black};
   outline: none;
