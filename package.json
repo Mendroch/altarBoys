@@ -1,7 +1,7 @@
 {
   "name": "altarboys",
   "displayName": "Ministranci",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Aplikacja dedykowana ministrantom ze Skoczowa",
   "author": "Krzysztof Mendroch, OptimalIT",
   "homepage": "./",
@@ -82,8 +82,8 @@
       }
     },
     "platforms": [
-      "ios",
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
